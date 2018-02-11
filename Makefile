@@ -12,7 +12,7 @@ run:
 		--name pypi \
 		-h pypi.local \
 		-v $(PYPI):/srv/pypi:rw \
-		-p 8080:80 \
+		-p 8080:8080 \
 		$(IMG_TAG)
 
 clean:

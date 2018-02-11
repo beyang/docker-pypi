@@ -17,7 +17,7 @@ the Docker index, you can use commands such as the following:
     docker run -t -i --rm \             # remove container when stopped
         -h pypi.local \                 # hostname
         -v /srv/pypi:/srv/pypi:rw \     # host packages from local directory
-        -p 8080:80 \                    # expose port 80 as port 8080
+        -p 8080:8080 \                  # expose port 8080
         --name pypi \                   # container name
         codekoala/pypi                  # docker repository
 
@@ -35,7 +35,7 @@ behavior:
 
 * ``PYPI_ROOT``: path within the container where packages will be stored.
   Defaults to ``/srv/pypi``.
-* ``PYPI_PORT``: port to bind to receive requests. Defaults to ``80``.
+* ``PYPI_PORT``: port to bind to receive requests. Defaults to ``8080``.
 * ``PYPI_PASSWD_FILE``: path to authentication file. Defaults to
   ``/srv/pypi/.htpasswd``.
 * ``PYPI_OVERWRITE``: allow existing packages to be overwritten. Defaults to
@@ -94,7 +94,7 @@ your `~/.pypirc` (create it if necessary), replacing both `yourusername` and
     password:pypipassword
 
     [internal]
-    repository: http://localhost:8080
+    repository: http://localhost:8800
     username:yourusername
     password:yourpassword
 

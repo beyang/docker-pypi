@@ -8,7 +8,7 @@ RUN apk update && \
 
 RUN pip install -U passlib pypiserver[cache]==1.2.1
 
-EXPOSE 80
+EXPOSE 8080
 VOLUME ["/srv/pypi"]
 
 ADD entrypoint.sh /
